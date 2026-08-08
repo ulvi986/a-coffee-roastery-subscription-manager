@@ -1,0 +1,15 @@
+{
+  "name": "a-coffee-roastery-subscription-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Coffee Roastery Subscription Manager",
+  "scripts": {
+    "dev": "concurrently -k \"npm --prefix frontend run dev\" \"uvicorn backend.app.main:app --reload --port 8000\"",
+    "build": "npm --prefix frontend run build",
+    "test": "python -m pytest backend/tests",
+    "start": "uvicorn backend.app.main:app --host 0.0.0.0 --port ${PORT:-8000}"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
